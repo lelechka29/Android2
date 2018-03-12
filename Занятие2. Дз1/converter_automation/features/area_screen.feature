@@ -11,15 +11,25 @@ Feature: User is able to convert area units
 
 
   Scenario: User is able to swap values
-      Given I see "Sq Kilometre" in From Header
+    #ошибка для проверки теста From Header
+      Given I see "Sq KilometrA" in From Header
+
       And I see "Sq Metre" in To header
       When I click on Swap button
       Then I see "Sq Metre" in From Header
       And I see "Sq Kilometre" in To header
 
 
-  @wip
-      Scenario Outline: User is able to convert default units
+  Scenario: User is able to swap values
+    Given I see "Sq Kilometre" in From Header
+    And I see "Sq Metre" in To header
+    When I click on Swap button
+    Then I see "Sq Metre" in From Header
+    #ошибка для проверки теста To Header
+    And I see "Sq KilometrA" in To header
+
+
+  Scenario Outline: User is able to convert default units
        Given I click on Clear button
         When I enter "<target>" to From field
         Then I get "<result>" in To field
@@ -30,39 +40,16 @@ Feature: User is able to convert area units
       #  |2     |2000000|
       #  |3     |3000000|
 
-  @job1
+
 Scenario: User is able to use soft keyboard to enter values
   Given I click on Clear button
   When I click on From field
   And I press "47" on soft keyboard
+    #для проверки теста
   Then I get "47000000" in To field
 
 
-    Scenario:
+  Scenario:
       When I select "Hectare" from left column
       Then I see "Hectare" in From header
       And I get "10000" in To field
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

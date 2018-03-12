@@ -53,27 +53,3 @@ Scenario: User is able to use soft keyboard to enter values
       When I select "Hectare" from left column
       Then I see "Hectare" in From header
       And I get "10000" in To field
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
